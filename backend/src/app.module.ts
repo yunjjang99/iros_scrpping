@@ -2,6 +2,7 @@ import { Module } from "@nestjs/common";
 import { ConfigModule } from "@nestjs/config";
 import { getDataSource } from "../dataSource"; // DataSource 가져오기
 import { UserModule } from "./user/user.module";
+import { LoggingModule } from "./logging/logging.module";
 
 @Module({
   imports: [
@@ -9,6 +10,7 @@ import { UserModule } from "./user/user.module";
       isGlobal: true, // 환경 변수를 전역에서 사용하기 위함
     }),
     UserModule,
+    LoggingModule
   ],
   providers: [
     {
